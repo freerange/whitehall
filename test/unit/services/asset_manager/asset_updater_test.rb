@@ -117,7 +117,7 @@ class AssetManager::AssetUpdaterTest < ActiveSupport::TestCase
       .with(@asset_id, "replacement_id" => replacement_id)
 
     attributes = { "replacement_legacy_url_path" => replacement_legacy_url_path }
-    @worker.call(@attachment_data, @legacy_url_path, attributes)
+    @worker.call(@attachment_data, @legacy_url_path, **attributes)
   end
 
   test "does not mark asset as replaced if already replaced by same asset" do
@@ -130,6 +130,6 @@ class AssetManager::AssetUpdaterTest < ActiveSupport::TestCase
     Services.asset_manager.expects(:update_asset).never
 
     attributes = { "replacement_legacy_url_path" => replacement_legacy_url_path }
-    @worker.call(@attachment_data, @legacy_url_path, attributes)
+    @worker.call(@attachment_data, @legacy_url_path, **attributes)
   end
 end

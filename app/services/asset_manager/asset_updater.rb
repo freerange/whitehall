@@ -13,11 +13,11 @@ class AssetManager::AssetUpdater
     end
   end
 
-  def self.call(*args)
-    new.call(*args)
+  def self.call(...)
+    new.call(...)
   end
 
-  def call(asset_data, legacy_url_path, new_attributes = {})
+  def call(asset_data, legacy_url_path, **new_attributes)
     attributes = find_asset_by(legacy_url_path)
     asset_deleted = attributes["deleted"]
 

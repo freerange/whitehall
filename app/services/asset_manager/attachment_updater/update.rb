@@ -15,7 +15,7 @@ class AssetManager::AttachmentUpdater::Update
     AssetManager::AssetUpdater.call(
       attachment_data,
       legacy_url_path,
-      new_attributes.deep_stringify_keys,
+      **new_attributes.deep_stringify_keys,
     )
   end
 
