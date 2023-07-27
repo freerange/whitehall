@@ -88,7 +88,7 @@ group :test do
   gem "minitest"
   gem "minitest-fail-fast"
   gem "minitest-stub-const"
-  gem "mocha"
+  gem "mocha", github: "freerange/mocha", branch: "fix-minitest-compatibility"
   gem "rack-test"
   gem "rails-controller-testing"
   gem "simplecov", require: false
